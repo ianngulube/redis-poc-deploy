@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-poc
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: redis-poc
+  template:
+    metadata:
+      labels:
+        app: redis-poc
+    spec:
+      containers:
+      - name: redis-poc
+        image: ianngulube/redis-poc:latest
+        ports:
+        - containerPort: 8080

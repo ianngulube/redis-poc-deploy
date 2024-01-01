@@ -15,5 +15,6 @@ spec:
       containers:
       - name: redis-poc
         image: ianngulube/redis-poc:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
